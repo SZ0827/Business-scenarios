@@ -1,0 +1,6 @@
+CREATE TABLE stock (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    product_id BIGINT NOT NULL UNIQUE COMMENT '商品 ID',
+    stock INT NOT NULL COMMENT '库存数量',
+    version INT NOT NULL DEFAULT 0 COMMENT '乐观锁版本号'
+);
