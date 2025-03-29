@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+//RESTful Web服务核心注解，组合@Controller和@ResponseBody自动将返回对象序列化为JSON/XML
 @RestController
 @RequestMapping("/stock")
 public class StockController {
-    @Autowired
+    @Autowired//从容器查找匹配类型的Bean注入
     private StockService stockService;
 
     @Autowired

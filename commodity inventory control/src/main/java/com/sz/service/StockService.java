@@ -45,6 +45,7 @@ public class StockService {
         Long result=redisTemplate.execute(stockDeductScript, Collections.singletonList(redisKey));
         return result==1&&result!=null;
    }
+   //声明式事务管理
     @Transactional
     public boolean confirmStock(Long productId) {
         Optional<Stock> stockOptional = stockRepository.findByProductId(productId);
